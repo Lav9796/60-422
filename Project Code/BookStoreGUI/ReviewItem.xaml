@@ -1,0 +1,59 @@
+﻿<!--********************************************************************************
+ * For use by students taking 60-422 (Fall, 2014) to work on assignments and project.
+ * Permission required material. Contact: xyuan@uwindsor.ca 
+ * *******************************************************************************-->
+<Window x:Class="BookStoreGUI.ReviewItem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterOwner"
+        Title="Review Book" Height="424" Width="442.333" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,-10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28" />
+            <RowDefinition Height="28" />
+            <RowDefinition Height="28" />
+            <RowDefinition Height="48" />
+            <RowDefinition Height="92" />
+            <RowDefinition Height="Auto" MinHeight="1" />
+            <RowDefinition Height="0*" />
+        </Grid.RowDefinitions>
+        <Label Grid.Column="0" Grid.Row="3" Margin="-2,25,6,92" Grid.RowSpan="2">ISBN:</Label>
+        <TextBox Name="isbnTextBox"
+                 Grid.Row="3" Margin="92,0,6,92" Grid.ColumnSpan="3" IsReadOnly="True" VerticalContentAlignment="Bottom" VerticalAlignment="Bottom" Height="23" Grid.RowSpan="2"/>
+        <Label Grid.Column="0" Grid.Row="4" Margin="-2,5,6,63">Title:</Label>
+        <TextBox Name="titleTextBox"
+                 Grid.Row="4" Margin="92,0,6,63" Grid.ColumnSpan="3" IsReadOnly="True" VerticalContentAlignment="Bottom" VerticalAlignment="Bottom" Height="23"/>
+        <Label Grid.Column="0" Grid.Row="4" Margin="-2,34,6,34">Order Number:</Label>
+        <TextBox Name="orderNoTextBox"
+                 Grid.Row="4" Margin="92,0,6,34" Grid.ColumnSpan="3" IsReadOnly="True" VerticalContentAlignment="Bottom" VerticalAlignment="Bottom" Height="23"/>
+        <Label Grid.Column="0" Grid.Row="6" Margin="-4,17,8,-77">Comments</Label>
+        <TextBox Name="commentsTextBox" TextWrapping="Wrap" AcceptsReturn="False" VerticalScrollBarVisibility="Visible"
+                 Grid.Row="6" Margin="93,20,19,-98" Grid.ColumnSpan="3" IsEnabled="True" VerticalContentAlignment="Top" VerticalAlignment="Top" Height="79"/>
+        <Label Grid.Row="4" Margin="-2,61,99,-54" Grid.RowSpan="3" Grid.ColumnSpan="3" >Rating</Label>
+        <StackPanel
+                    Grid.Row="6" Orientation="Horizontal"
+                    HorizontalAlignment="Right" Margin="0,104,0,-162" Width="352" Grid.ColumnSpan="3">
+            <Button Name="addReviewButton" Click="addReviewButton_Click" IsDefault="True"
+                    MinWidth="80" Margin="12,5,5,23" MaxHeight="23" MaxWidth="23">OK</Button>
+            <Button Name="ReviewListButton" Click="ReviewListButton_Click" IsCancel="True"
+                    MinWidth="80" Margin="5,5,5,23" MaxHeight="23" MaxWidth="23">See Reviews</Button>
+            <Button Name="CancelButton" Click="cancelButton_Click" IsCancel="True"
+                    MinWidth="80" Margin="5,5,5,23" MaxHeight="23" MaxWidth="23">Cancel</Button>
+
+        </StackPanel>
+
+        <ComboBox Name="ratingsbutton" SelectedIndex="0"  Grid.Column="2" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" Width="120" Height="22" Margin="0,71,0,0" >
+            <ComboBoxItem Content="1" HorizontalAlignment="Left" Width="118" />
+            <ComboBoxItem Content="2" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="3" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="4" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="5" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+        <Image Grid.Column="2" HorizontalAlignment="Left" Height="108" Grid.RowSpan="4" VerticalAlignment="Top" Width="179" Source="Resources/logo.png" Margin="27,1,0,0"/>
+    </Grid>
+</Window>
